@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyNow Weather</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+    integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body class="font-manrope">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="./" aria-label="SkyNow home">
+        <span class="logo-badge"><i class="fa-solid fa-cloud-sun"></i></span>
+        <span class="logo-text">SKYNOW</span>
+      </a>
+
+      <div class="search">
+        <input id="q" type="search" placeholder="Search a city" aria-label="Search a city">
+        <button id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="units" role="group" aria-label="Temperature unit">
+        <button data-unit="C" class="active">°C</button>
+        <button data-unit="F">°F</button>
+        <button data-unit="K">K</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="subheader">
+    <div class="subheader-inner">
+      <h1 id="pageTitle">Weather</h1>
+      <div class="subheader-actions">
+        <button id="favBtn" class="outline-btn" aria-label="Toggle favorite" hidden></button>
+        <button id="gpsBtn" class="outline-btn" title="Use my location">
+          Locate <i class="fa-regular fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main id="weatherArea">
+    <div class="container">
+      <ul id="results" class="chips"></ul>
+
+      <div class="fav-row">
+        <span>Favorites</span>
+        <ul id="favs" class="chips"></ul>
+      </div>
+
+      <p id="status" role="status">Search for a city or use your location.</p>
+
+      <section id="current" class="card" hidden>
+        <h2 id="todayTitle"></h2>
+        <p id="sunTimes"></p>
+        <div class="providers">
+          <article id="openMeteoCard"></article>
+          <article id="metNorwayCard"></article>
+          <article id="openWeatherCard"></article>
+        </div>
+      </section>
+
+      <section id="hourlySec" class="card" hidden>
+        <h2>Next 24 hours</h2>
+        <div id="hourly" class="scroller"></div>
+      </section>
+
+      <div class="grid-two">
+        <section id="chartSec" class="card" hidden>
+          <h2>Providers compared</h2>
+          <div class="chart-box"><canvas id="chart"></canvas></div>
+        </section>
+
+        <section id="dailySec" class="card" hidden>
+          <h2>7-day forecast</h2>
+          <div id="daily"></div>
+        </section>
+      </div>
+
+      <footer>Data: Open-Meteo, MET Norway and OpenWeatherMap</footer>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
