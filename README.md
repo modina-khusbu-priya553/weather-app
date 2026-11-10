@@ -2,7 +2,7 @@
 
 A weather app built with plain HTML, CSS and JavaScript (no frameworks).
 
-**Live site:** [your GitHub Pages link]
+**Live site:** 
 
 ## Features
 - Search for a city or use your GPS location
